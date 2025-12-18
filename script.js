@@ -1,11 +1,30 @@
-// Sticky Header
+/* ============================= */
+/* Navbar Show / Hide on Scroll */
+/* ============================= */
+
 const header = document.querySelector("header");
+let lastScrollY = window.scrollY;
 
 window.addEventListener("scroll", () => {
-    header.classList.toggle("sticky", window.scrollY > 0);
+    const currentScroll = window.scrollY;
+
+    // Aşağı kaydırırken gizle
+    if (currentScroll > lastScrollY && currentScroll > 100) {
+        header.style.top = "-120px";
+    } 
+    // Yukarı kaydırırken göster
+    else {
+        header.style.top = "0";
+    }
+
+    lastScrollY = currentScroll;
 });
 
-// Mobile Menu Toggle
+
+/* ============================= */
+/* Mobile Menu Toggle */
+/* ============================= */
+
 const menu = document.querySelector("#menu-icon");
 const navbar = document.querySelector(".navbar");
 
@@ -14,20 +33,30 @@ menu.addEventListener("click", () => {
     navbar.classList.toggle("active");
 });
 
-// Close Navbar on Scroll
+
+/* ============================= */
+/* Close Mobile Menu on Scroll */
+/* ============================= */
+
 window.addEventListener("scroll", () => {
     menu.classList.remove("bx-x");
     navbar.classList.remove("active");
 });
 
-// ScrollReveal Animations
+
+/* ============================= */
+/* ScrollReveal Animations */
+/* ============================= */
+
 const sr = ScrollReveal({
-    distance: "25px",
+    distance: "30px",
     duration: 800,
     delay: 150,
-    reset: true
+    reset: false
 });
 
-// Sections Reveal Animations
 sr.reveal(".home-text", { origin: "bottom" });
-sr.reveal(".about, .experience, .skills, .achievement, .portfolio, .POR, .contact", { origin: "bottom" });
+sr.reveal(
+    ".about, .experience, .skills, .achievement, .portfolio, .POR, .contact",
+    { origin: "bottom" }
+);

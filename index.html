@@ -6,7 +6,7 @@
     <title>Aslı Çolakoğlu</title>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
@@ -20,13 +20,19 @@
     <!-- Header -->
     <header>
         <h2 class="logo">Portfo<span>lio</span></h2>
+
+        <!-- MENU ICON (EKLENDİ) -->
+        <i class='bx bx-menu' id="menu-icon"></i>
+
         <ul class="navbar">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Me</a></li>
+            <li><a href="#languages">Languages</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#achievement">Achievements</a></li>
             <li><a href="#portfolio">Projects</a></li>
+            <li><a href="#POR">Responsibilities</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </header>
@@ -34,7 +40,7 @@
     <!-- Home -->
     <section class="home" id="home">
         <video autoplay loop muted playsinline class="back-video">
-            <source src="img/video4.mp4" type="video/mp4">
+            <source src="video.mp4" type="video/mp4">
         </video>
 
         <div class="home-text">
@@ -48,7 +54,7 @@
     <!-- About -->
     <section class="about" id="about">
         <div class="about-img">
-            <img src="img/profile.jpg" alt="Profile Photo">
+            <img src="image.jpeg" alt="Profile Photo">
         </div>
 
         <div class="about-text">
@@ -72,7 +78,7 @@
     </section>
 
     <!-- Languages -->
-    <div class="inner">
+    <div class="inner" id="languages">
         <div class="Tech_header">
             <h1>Languages</h1>
         </div>
@@ -351,7 +357,7 @@
 
         <div class="portfolio-content">
             <div class="row">
-                <img src="img/speaker.jpg">
+                
                 <h3>Social Media Manager</h3>
                 <p>• Manage social media accounts.<br>
                 • Create content for event videos and promotional campaigns.</p>
@@ -384,8 +390,14 @@
         </div>
     </section>
 
-    <!-- Scroll Top -->
+      <!-- Scroll Top -->
     <a href="#" class="top"><i class='bx bx-up-arrow-alt'></i></a>
+
+    <!-- ScrollReveal CDN (EKLENDİ) -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Custom JS (EKLENDİ) -->
+    <script src="script.js"></script>
 
 </body>
 </html>
