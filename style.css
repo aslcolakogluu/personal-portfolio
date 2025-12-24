@@ -74,6 +74,11 @@ header.sticky{
     border-radius: var(--radius);
     transition: var(--transition);
 }
+.navbar a.active{
+    background: var(--main-color);
+    color: #fff;
+}
+
 
 .navbar a:hover{
     background: var(--main-color);
@@ -119,7 +124,7 @@ section{
 }
 
 .home-text h4{
-    color: var(--main-color);
+    
     margin-bottom: 10px;
 }
 
@@ -129,7 +134,7 @@ section{
 }
 
 span{
-    color: var(--main-color);
+    color: var(--h1-font);
 }
 
 /* Button */
@@ -160,15 +165,14 @@ span{
     flex-direction: column;
     gap: 1.6rem;
 }
+.about-text p{
+    color: var(--second-color);
+    
+}
+
 .about-text .btn{
     align-self: flex-start;
     margin-top: 1rem;
-}
-
-
-.about-text p{
-    color: var(--second-color);
-    margin-bottom: 1.6rem;
 }
 
 .about-img img{
@@ -180,7 +184,6 @@ span{
 /* Shared Card Style */
 /* ----------------------------- */
 .box,
-.row,
 .skill-box{
     background: var(--card-soft);
     padding: 32px 36px;
@@ -189,21 +192,22 @@ span{
     flex-direction: column;
     justify-content: center;
     transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.04);
 }
 
 .box:hover,
-.row:hover,
 .skill-box:hover{
     transform: translateY(-4px);
     background: var(--main-color);
     color: #fff;
 }
 
+
 /* ----------------------------- */
 /* Text Spacing */
 /* ----------------------------- */
 .box h3,
-.row h3{
+.skill-box h3{
     margin-bottom: 0.6rem;
     font-weight: 600;
     color: var(--second-color);
@@ -219,6 +223,8 @@ span{
     color: var(--second-color);
 }
 
+.box:hover h3,
+.box:hover h4,
 .box:hover p,
 .skill-box:hover h3{
     color: #fff;
@@ -239,6 +245,10 @@ span{
 /* ----------------------------- */
 /* Skills */
 /* ----------------------------- */
+.skills .box{
+    text-align: center;
+    font-weight: 600;
+}
 .skills .box img,
 .tech_img{
     display: none;
@@ -258,19 +268,27 @@ span{
 /* ----------------------------- */
 /* Portfolio / Projects */
 /* ----------------------------- */
+.portfolio .row{
+    background: var(--card-bg);
+    border-left: 4px solid var(--main-color);
+    padding: 32px 36px;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+
 .portfolio .row img{
     display: none;
 }
 
-.portfolio .row{
-    background: var(--card-bg);
-    border-left: 4px solid var(--main-color);
-}
 
 .portfolio .row:hover{
-    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+    transform: translateY(-4px);
     border-left-color: var(--second-color);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
 }
+
+    
 
 .portfolio .row a{
     color: inherit;
@@ -285,6 +303,15 @@ span{
 
 .achievement .row{
     background: var(--card-bg);
+    padding: 32px 36px;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.achievement .row:hover{
+    transform: translateY(-4px);
+    
+    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
 }
 
 /* ----------------------------- */
@@ -295,7 +322,37 @@ span{
     grid-template-columns: repeat(2,1fr);
     gap: 3rem;
 }
-
+.contact-text{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+}
+.contact-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+.contact-list{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.contact-list p{
+    color: var(--second-color);
+    line-height: 1.6;
+}
+.contact-list .btn{
+    width: fit-content;
+}
+.contact-icons{
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.contact-icons a{
+    display: inline-flex;
+}
 .contact-icons i{
     width: 40px;
     height: 40px;
@@ -307,11 +364,12 @@ span{
     justify-content: center;
     transition: var(--transition);
 }
-
 .contact-icons i:hover{
     background: var(--main-color);
     color: #fff;
+    
 }
+
 
 /* ----------------------------- */
 /* Footer */
@@ -348,6 +406,17 @@ span{
     .contact{
         grid-template-columns: 1fr;
     }
+    .contact-text{
+        align-items: center;
+        text-align: center;
+    }
+    .contact-icons{
+        justify-content: center;
+    }
+    .contact-list .btn{
+        margin: 0 auto;
+    }
+    
 }
 
 @media (max-width: 830px){
@@ -383,57 +452,38 @@ span{
         padding: 24px;
     }
 }
-.Tcontainer{
-    padding-left: 0;
-    padding-right: 0;
-}
-.Tcontainer{
-    max-width: 100%;
-    margin: 3.5rem auto 0;
-    padding: 0;
-}
 
-@media (max-width: 600px){
-    .Tcontainer{
-        padding-left: 0;
-        padding-right: 0;
-    }
+
+.skills-content{
+    max-width: 1100px;      /* diğer bölümlerle aynı his */
+    margin: 3.5rem auto 0;  /* 🔑 SAYFA ORTASI */
+    align-items: stretch;
 }
-/* Languages block inside Skills */
-.skills .inner{
-    padding: 0;
-    margin-top: 3.5rem;
-}
-.Tech_header h1{
-    font-size: var(--h2-font);
-    color: var(--second-color);
-    margin-bottom: 2rem;
-    text-align: left;
+.skills .box{
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 .Tcontainer{
-    max-width: 100%;
+    max-width: 1100px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 2rem;
-}
-.skills-content{
-    margin-top: 5rem;
-    padding-top: 3rem;
-    border-top: 1px solid rgba(0,0,0,0.08);
 }
 .skills .main-text{
-    margin-top: 4rem;
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto 3rem;
 }
-.skill-box h3{
-    color: var(--second-color);
+.experience .main-text{
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto 3rem;
 }
-
-.skill-box:hover h3{
+.skills .box:hover h3{
     color: #fff;
 }
-@media (max-width: 600px){
-    .Tcontainer{
-        grid-template-columns: repeat(2, 1fr);
-    }
+.achievement .row a{
+    color: inherit;
 }
